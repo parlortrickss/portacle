@@ -2,11 +2,11 @@
 
 readonly TAG=
 readonly REPOSITORY=
-readonly SSL_CA=https://curl.se/ca/cacert-2022-07-19.pem
+readonly SSL_CA=https://curl.se/ca/cacert.pem
 readonly NOTO_FONTS=("NotoSans-hinted.zip" "NotoMono-hinted.zip" "NotoEmoji-unhinted.zip")
-readonly NOTO_FONTS_DL=https://noto-website.storage.googleapis.com/pkgs
+readonly NOTO_FONTS_DL=https://noto-website-2.storage.googleapis.com/pkgs/
 readonly ICON_FONTS=("material-design-icons.ttf" "weathericons.ttf" "octicons.ttf" "fontawesome.ttf" "file-icons.ttf" "all-the-icons.ttf")
-readonly ICON_FONTS_DL=https://raw.githubusercontent.com/domtronn/all-the-icons.el/master/fonts
+readonly ICON_FONTS_DL=https://raw.githubusercontent.com/domtronn/all-the-icons.el/refs/heads/master/all-the-icons.el
 
 ###
 
