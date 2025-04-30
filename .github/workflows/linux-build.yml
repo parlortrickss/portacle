@@ -1,0 +1,33 @@
+name: Linux Build
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  schedule:
+    - cron: '0 0 1 * *'  # Run monthly on the 1st
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y sbcl git time curl build-essential autoconf automake autogen autopoint libncurses-dev libx11-dev libxpm-dev libgtk2.0-dev zlib1g-dev libpcre2-dev libcurl4-gnutls-dev libssl-dev libgcrypt-dev libglfw3-dev libtool liblzma-dev texinfo xsel libzstd1-dev libgnutls-dev libglu1-mesa-dev golang libassuan-dev libksba-dev
+
+      - name: Build Portacle
+        run: |
+          cd build
+          ./build.sh
+
+      - name: Upload Linux Package
+        uses: actions/upload-artifact@v3
+        with:
+          name: portacle-linux
+          path: build/portacle-*-linux*.tar.xz
