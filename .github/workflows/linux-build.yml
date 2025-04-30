@@ -27,7 +27,7 @@ jobs:
           ./build.sh
 
       - name: Upload Linux Package
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: portacle-linux
           path: build/portacle-*-linux*.tar.xz
