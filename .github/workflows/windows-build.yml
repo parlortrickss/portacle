@@ -60,7 +60,7 @@ jobs:
       - name: Install 7ZipSFX
         shell: pwsh
         run: |
-          Invoke-WebRequest -Uri "https://web.archive.org/web/20160311162325/http://7zsfx.info/files/7zsd_extra_160_2712.7z" -OutFile "7zsfx.7z"
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/OlegScherbakov/7zSFX/master/files/7zsd_extra_170_3900.7z" -OutFile "7zsfx.7z"
           & 'C:\Program Files\7-Zip\7z.exe' x 7zsfx.7z -o"C:\Program Files\7-Zip"
 
       - name: Build Portacle
